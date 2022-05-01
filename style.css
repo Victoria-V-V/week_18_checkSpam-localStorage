@@ -1,0 +1,33 @@
+.main {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+}
+
+.media-block .media-left {
+    float: left;
+}
+
+.media-block .media-body {
+    overflow: hidden;
+    width: auto;
+    margin-top: 20px;
+}
+
+.wrapper {
+    padding: 40px 20px;
+}
+
+.btn {
+    margin-top: 15px;
+}
+
+.userAva {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
