@@ -31,3 +31,9 @@
     flex-direction: row;
     margin-bottom: 20px;
 }
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
