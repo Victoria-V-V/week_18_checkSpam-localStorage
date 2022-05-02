@@ -4,16 +4,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (user != null) {
         document.querySelector("#user").value = user;
     }
+
     let comment = localStorage.getItem('comment');
     if (comment != null) {
         document.querySelector("#comment").value = comment;
     }
+
+    let src = localStorage.getItem('avatar');
+    if (src != null) {
+        document.querySelector(".avatar").src = src;
+    }
+
 });
 
+//buttons
 const commentButton = document.querySelector('.add');
 const removeButton = document.querySelector('.remove');
+const downloadButton = document.querySelector('.download');
 commentButton.addEventListener("click", checkMessage);
 removeButton.addEventListener("click", removeData);
+downloadButton.addEventListener("click", downloadImage);
 
 //запись имени и сообщения в чат
 function sendMessage(user, checkedComment) {
@@ -40,6 +50,17 @@ function checkMessage() {
 function removeData() {
     localStorage.removeItem('name');
     localStorage.removeItem('comment');
+    localStorage.removeItem('avatar');
     user.value = '';
     comment.value = '';
+    document.querySelector(".avatar").src = "https://bootstraptema.ru/snippets/icons/2016/mia/7.png";
+}
+
+//загрузка новой картинки
+function downloadImage() {
+    let src = document.querySelector('#imageSrc').value;
+    document.querySelector('.avatar').src = src;
+    if (localStorage.getItem('avatar') == null) {
+        localStorage.setItem('avatar', src);
+    }
 }
